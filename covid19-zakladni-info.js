@@ -29,6 +29,10 @@ fetch('./variables.json')
             // pridej do prehledu podil pribytku nakazenych ve vekove 
             // skupine 65+ za posledni mereny den z celkoveho pribytku
             // nakazenych za posledni mereny den
+            
+            let datumPodil = new Date(zakladniInfo.potvrzene_pripady_65_vcerejsi_den_datum);
+            document.getElementsByClassName('js-podil-datum').innerText = datumPodil.toLocaleDateString('cs-CZ');
+            document.getElementById('js-podil').innerText = parseInt((zakladniInfo.potvrzene_pripady_65_vcerejsi_den)/(zakladniInfo.potvrzene_pripady_vcerejsi_den)*100).toLocaleString('cs-CZ')
 
             // UKOL NA CVICENI
             // proved validaci, zda plati podminka 
